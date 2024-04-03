@@ -1,5 +1,7 @@
 ﻿# Ara3D.Mathematics
 
+[![NuGet Version](https://img.shields.io/nuget/v/Ara3D.Mathematics)](https://www.nuget.org/packages/Ara3D.Mathematics)
+
 **Ara3D.Mathematics** is a portable, safe, and efficient 3D math library written in C# 
 targeting .NET Standard 2.0 without any dependencies. 
 
