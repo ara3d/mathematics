@@ -4,7 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>Ara3D.Mathematics is an efficient math library forked from System.Numerics, MonoGame, and Vim.Math3D with additional functionality and a strict struct layout for cross platform serialization.</Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageProjectUrl>https://github.com/ara3d/ara3d/tree/main/src/Ara3D.Math</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/ara3d/mathematics</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ara3d/mathematics</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,5 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-
 
 </Project>
