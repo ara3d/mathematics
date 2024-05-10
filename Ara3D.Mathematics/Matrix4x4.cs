@@ -7,6 +7,17 @@ using System.Runtime.Serialization;
 namespace Ara3D.Mathematics
 {
     /// <summary>
+    /// Contains the result of decomposition of a matrix
+    /// </summary>
+    public class Decomposition
+    {
+        public bool Decomposed;
+        public Vector3 Translation;
+        public Quaternion Rotation;
+        public Vector3 Scale;
+    }
+
+    /// <summary>
     /// A structure encapsulating a 4x4 matrix.
     /// </summary>
     [StructLayout(LayoutKind.Sequential), DataContract]
@@ -1826,6 +1837,15 @@ namespace Ara3D.Mathematics
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Decompose(out Vector3 scale, out Quaternion rotation, out Vector3 translation)
             => Decompose(this, out scale, out rotation, out translation);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Decomposition Decompose()
+        {
+            var r = new Decomposition();
+            r.Result = Decompose(out r.Scale, out r.Rotation, out r.Translation);
+            return r;
+        }
+
 
         /// <summary>
         /// Attempts to extract the scale, translation, and rotation components from the given scale/rotation/translation matrix.
