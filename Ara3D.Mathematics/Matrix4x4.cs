@@ -1842,10 +1842,9 @@ namespace Ara3D.Mathematics
         public Decomposition Decompose()
         {
             var r = new Decomposition();
-            r.Result = Decompose(out r.Scale, out r.Rotation, out r.Translation);
+            r.Decomposed = Decompose(out r.Scale, out r.Rotation, out r.Translation);
             return r;
         }
-
 
         /// <summary>
         /// Attempts to extract the scale, translation, and rotation components from the given scale/rotation/translation matrix.
