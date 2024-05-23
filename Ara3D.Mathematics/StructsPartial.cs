@@ -108,7 +108,7 @@ namespace Ara3D.Mathematics
         public float Length => A.Distance(B);
         public float LengthSquared => A.DistanceSquared(B);
         public Vector3 MidPoint => A.Average(B);
-        public Line Normal => new Line(A, A + Vector.Normalize());
+        public Line Normalize => new Line(A, A + Vector.Normalize());
         public Line Inverse => new Line(B, A);
 
         public Vector3 Lerp(float amount)
@@ -210,8 +210,32 @@ namespace Ara3D.Mathematics
         public bool Intersects(Line2D other) =>
             // Inspired by: https://martin-thoma.com/how-to-check-if-two-line-segments-intersect/
             Intersects(BoundingBox(), other, other.BoundingBox());
+
+        public Vector2 Vector 
+            => (B - A).Normalize();
+
+        public Vector2 Tangent 
+            => (-Vector.Y, Vector.X);
+
+        public Line2D ParallelOffset(float x = 1)
+            => Offset(Tangent * x);
+
+        public (Line2D, Line2D) ParallelOffsets(float x = 1)
+            => (ParallelOffset(x), ParallelOffset(-x));
+
+        public Line2D Offset(Vector2 v)
+            => (A + v, B + B);
+
+        public Vector2 Lerp(float t)
+            => A.Lerp(B, t);
+
+        public float LengthSquared()
+            => (B - A).LengthSquared();
+
+        public float Length()
+            => LengthSquared().Sqrt();
     }
-   
+
     public partial struct Pose
     {
         public static Pose Identity => new Pose(Vector3.Zero, Quaternion.Identity);

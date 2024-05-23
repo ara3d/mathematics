@@ -430,5 +430,8 @@ namespace Ara3D.Mathematics
 
         public AABox Transform(Matrix4x4 mat)
             => Create(Corners.Select(v => v.Transform(mat)));
+
+        public Vector3 Clamp(Vector3 v)
+            => v.Clamp(this);
     }
 }
