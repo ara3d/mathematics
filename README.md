@@ -1,4 +1,6 @@
-﻿# Ara3D.Mathematics
+### DEPRECATED: This library is being replaced by [https://github.com/ara3d/plato.geometry](Plato.Geometry).
+
+ # Ara3D.Mathematics
 
 [![NuGet Version](https://img.shields.io/nuget/v/Ara3D.Mathematics)](https://www.nuget.org/packages/Ara3D.Mathematics)
 
